@@ -25,8 +25,14 @@ Clone the repository or Download the code.
 
 ### Run
 * Open WebGrabDemo.sln in visual studio. 
-* Build the project
+* Clean the solution Menu > Build > Clean Solution
+* Rebuild the solution Menu > Build > Rebuild Solution
 * Make sure you enabled below Nuget package manager settings
   - Allow NuGet to download missing packages
   - Automatically check for missing packages during build iin Visual Studio
 * Run the solution
+
+### Demo
+* Enter any URL in the input eg: "https://www.sony.co.in/electronics/televisions/a95k-series"
+* Click Fetch button
+* Wait for few seconds to get the response

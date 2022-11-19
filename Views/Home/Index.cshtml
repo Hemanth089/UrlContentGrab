@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="container-fluid mb-5 text-center text-success">
+    <h1 class="display-5 fw-bold">URL Content Grabber</h1>
+    <p>Demo Application to demonstrate content grabbing from any URL</p>
+</div>
+
+<form id="URLFrom">
+    <div class="row g-3">
+        <div class="col-sm-2 col-md-1">
+            <label class="col-form-label">Enter URL</label>
+        </div>
+        <div class="col-sm col-md-3">
+            <input type="text" class="form-control" placeholder="URL" aria-label="URL" id="UrlInput" name="UrlInput">
+        </div>
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" id="FetchBtn">Fetch</button>
+        </div>
+    </div>
+</form>
+
+
+<div class="row invisible" id="Spinner">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+<div id="ContentDisplay" class="invisible">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h3 class="mb-3 text-success">Total Words: <span id="TotalWords"></span></h3>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-12 col-md-6 p-2">            
+            <h4 class="text-primary">Image carousel</h4>
+            <div id="carouselExampleControls" class="carousel slide border border-primary border-2 rounded p-2" data-bs-ride="carousel">
+                <div class="carousel-inner" id="CaraousalDisplay">
+
+                </div>
+                <button class="carousel-control-prev text-info" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <h4 class="text-primary">Top 10 Words Chart</h4>
+            <div id="chart"></div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <h4 class="text-primary">All Words and its Count</h4>
+        <div class="col-sm-12 col-md-6">
+            <ul class="list-unstyled" id="AllWordsCount">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row invisible" id="ErrorSection">
+    <div class="alert alert-warning" role="alert">
+        Something went wrong. Please try different URL!
+    </div>
+</div>
+<script>
+    $(function () {
+        Hemanth.WebGrab.Init();
+    });
+</script>
